@@ -1,0 +1,22 @@
+/* App.css */
+
+.app {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  min-height: 100vh; /* Full height of the viewport */
+  background-color: #f0f2f5; /* Light background color */
+  font-family: 'Arial', sans-serif; /* Set font for the app */
+  padding: 20px; /* Add padding around the app */
+}
+
+.full-width {
+  width: 100%; /* Full width for the task display section */
+  max-width: 600px; /* Set a maximum width for better layout */
+  margin-top: 20px; /* Space above the task display */
+  background-color: #ffffff; /* White background for task display */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px; /* Padding inside the task display */
+}

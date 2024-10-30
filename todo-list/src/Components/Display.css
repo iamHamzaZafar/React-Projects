@@ -1,0 +1,87 @@
+/* Display.css */
+
+h1 {
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Space below the heading */
+    color: #333; /* Dark color for the heading */
+}
+
+.display-task {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space out the items */
+    padding: 10px; /* Add padding around each task */
+    margin: 10px 0; /* Add vertical space between tasks */
+    background-color: #f9f9f9; /* Light background for tasks */
+    border: 1px solid #ddd; /* Light border around each task */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth background color change */
+}
+
+/* Add styles for the task description */
+h2 {
+    font-size: 18px; /* Font size for task descriptions */
+    color: #555; /* Darker gray color for descriptions */
+    margin: 0; /* Remove default margin */
+    padding: 0 10px; /* Horizontal padding for spacing */
+    flex-grow: 1; /* Allow the text to take available space */
+    overflow: hidden; /* Prevent overflow */
+    white-space: normal; /* Allow text wrapping */
+    text-overflow: ellipsis; /* Show ellipsis for long text */
+}
+
+/* Style for the checkbox */
+input[type="checkbox"] {
+    margin-right: 15px; /* Space between checkbox and task description */
+    transform: scale(1.5); /* Enlarge the checkbox */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Button container to manage button alignment */
+.button-container {
+    display: flex; /* Flex container for buttons */
+    gap: 10px; /* Space between buttons */
+}
+
+/* Button styles */
+button {
+    padding: 5px 10px; /* Padding for the button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #007bff; /* Primary button color */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+/* Style for the delete button */
+button.delete {
+    background-color: #dc3545; /* Red color for delete button */
+}
+
+/* Change color on hover */
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+button.delete:hover {
+    background-color: #c82333; /* Darker red on hover for delete button */
+}
+
+.completed{
+    text-decoration: line-through;
+    color: gray; 
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .display-task {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    h2 {
+        margin-bottom: 10px; /* Space below the task description */
+        max-width: 100%; /* Full width on small screens */
+    }
+}
