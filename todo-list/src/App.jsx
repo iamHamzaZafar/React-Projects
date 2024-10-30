@@ -3,6 +3,7 @@ import "./App.css";
 import Input from "./Components/Input";
 import DisplayTask from "./Components/DisplayTask";
 
+//  project competed.
 function App() {
   const [task, setTask] = useState([]);
   const [isEditing, setIsEditiong] = useState(false);
