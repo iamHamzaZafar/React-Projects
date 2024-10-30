@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Display.css";
 import EditTask from "./EditTask";
 
@@ -8,6 +8,9 @@ const DisplayTask = ({
   completeTask,
   isEditing,
   setIsEditiong,
+  editTask,
+  editId,
+  updateTask
 }) => {
   return (
     <>
@@ -16,31 +19,38 @@ const DisplayTask = ({
         <p> There is no task </p>
       ) : (
         <div>
-          {task.map((task) => {
-            return (
-              <div className="display-task" key={task.id}>
-                <input onChange={() => completeTask(task.id)} type="checkbox" />
-                <h2 className={task.isCompleted ? "completed" : ""}>
-                  {task.desc}
-                </h2>
-                <div className="button-container">
-                  <button disabled={task.isCompleted} onClick={() => setIsEditiong(true)}>Edit</button>
-                  <button
-                    onClick={() => deleteTask(task.id)}
-                    className="delete"
-                  >
-                    Delete
-                  </button>
-                </div>
+          {task.map((task) => (
+            <div className="display-task" key={task.id}>
+              <input onChange={() => completeTask(task.id)} type="checkbox" />
+              <h2 className={task.isCompleted ? "completed" : ""}>
+                {task.desc}
+              </h2>
+              <div className="button-container">
+                <button
+                  disabled={task.isCompleted}
+                  onClick={() => editTask(task.id)}
+                >
+                  Edit
+                </button>
+                <button
+                  onClick={() => deleteTask(task.id)}
+                  className="delete"
+                >
+                  Delete
+                </button>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       )}
-      {
-        (task.length > 0 && isEditing) ? (<div>{isEditing && <EditTask setIsEditiong={setIsEditiong} />}</div>) : " "
-      }
-      
+      {isEditing && (
+        <EditTask
+          task={task}
+          editId={editId}
+          setIsEditiong={setIsEditiong}
+          updateTask={updateTask}
+        />
+      )}
     </>
   );
 };

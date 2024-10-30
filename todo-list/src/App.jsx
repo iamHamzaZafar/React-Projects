@@ -5,7 +5,8 @@ import DisplayTask from "./Components/DisplayTask";
 
 function App() {
   const [task, setTask] = useState([]);
-  const[isEditing , setIsEditiong] = useState(false) ;
+  const [isEditing, setIsEditiong] = useState(false);
+  const [editId, setEditId] = useState(null);
 
   function addTask(inputText) {
     const newTask = {
@@ -13,16 +14,25 @@ function App() {
       desc: inputText,
       isCompleted: false,
     };
-
-    console.log(newTask);
     setTask([...task, newTask]);
-    console.log(task);
   }
 
   function deleteTask(task_id) {
-    console.log("task id is:", task_id);
-    const filterTask = task.filter((task) => task.id != task_id);
+    const filterTask = task.filter((task) => task.id !== task_id);
     setTask(filterTask);
+  }
+
+  function editTask(task_id) {
+    setIsEditiong(true);
+    setEditId(task_id);
+  }
+
+  function updateTask(task_id, updatedDesc) {
+    const updatedTasks = task.map((t) =>
+      t.id === task_id ? { ...t, desc: updatedDesc } : t
+    );
+    setTask(updatedTasks);
+    setIsEditiong(false); // close edit mode after updating
   }
 
   function completeTask(task_id) {
@@ -37,11 +47,14 @@ function App() {
       <Input addTask={addTask} />
       <div className="full-width">
         <DisplayTask
+          editTask={editTask}
           isEditing={isEditing}
           setIsEditiong={setIsEditiong}
           completeTask={completeTask}
           deleteTask={deleteTask}
           task={task}
+          editId={editId}
+          updateTask={updateTask}
         />
       </div>
     </div>
