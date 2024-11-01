@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center h-[80vh]">
       <div className="w-full max-w-lg md:max-w-2xl text-center px-4 py-8 bg-white shadow-md rounded-lg">
         {/* Heading with two colors */}
         <h1 className="text-3xl font-bold">
