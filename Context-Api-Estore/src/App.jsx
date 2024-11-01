@@ -6,20 +6,15 @@ import AllProducts from "./Pages/AllProducts";
 import ProductDisplay from "./Pages/ProductDisplay";
 import About from "./Pages/About";
 
-
-// https://fakestoreapi.com/products
-
-
 function App() {
   return (
     <BrowserRouter>
-    <Navbar />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/all-products" element={<AllProducts />} />
-        <Route path="/product:id" element={<ProductDisplay />} />  
-        <Route path="/about" element={<About />} />  
-
+        <Route path="/product/:id" element={<ProductDisplay />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   );
