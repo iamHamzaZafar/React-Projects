@@ -2,6 +2,7 @@ import React from "react";
 import Card from "../components/Card";
 import { useContext } from "react";
 import { DataContext } from "../context-api/DataContext";
+import Pagination from '../components/Pagination'
 
 const AllProducts = () => {
   const { data, loading, error } = useContext(DataContext);
@@ -10,7 +11,11 @@ const AllProducts = () => {
 
 
   return (
+    <>
     <Card products={data}  />
+    <Pagination />
+    </>
+    
   );
 };
 
