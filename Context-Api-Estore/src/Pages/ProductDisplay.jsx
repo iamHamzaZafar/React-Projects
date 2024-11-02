@@ -1,8 +1,11 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { DataContext } from "../context-api/DataContext";
+import {CartContext} from '../context-api/CartContext'
+import { toast } from 'react-toastify';
 
 const ProductDisplay = () => {
+  const {addToCart} = useContext(CartContext) ;
   const { data, loading, error } = useContext(DataContext);
   const { id } = useParams();
   console.log(data)
@@ -33,7 +36,7 @@ const ProductDisplay = () => {
           <h1 className="text-3xl font-bold">{product.title}</h1>
           <p className="text-xl mt-4 text-gray-700">Price: ${product.price}</p>
           <p className="mt-2 text-gray-600">{product.description}</p>
-          <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300">
+          <button onClick={()=>addToCart(product)} className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300">
             Add to cart
           </button>
         </div>

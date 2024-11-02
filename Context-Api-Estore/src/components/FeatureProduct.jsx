@@ -5,7 +5,7 @@ import Card from "./Card";
 
 const FeatureProduct = () => {
   const { data, loading, error } = useContext(DataContext);
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className="text-center">Loading...</p>;
   if (error) return <p>Error loading data</p>;
 
   const featuredProducts = data.filter((data) => {
