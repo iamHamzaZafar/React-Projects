@@ -7,12 +7,12 @@ const About = () => {
         {/* Heading with two colors */}
         <h1 className="text-3xl font-bold">
           <span className="text-blue-600">Welcome to</span>{" "}
-          <span className="text-yellow-500">Shop-Now</span>
+          <span className="text-yellow-500">Shop Easy</span>
         </h1>
 
         {/* Paragraph about the store */}
         <p className="mt-4 text-gray-700 leading-relaxed">
-          At Shop-Now, we are dedicated to bringing you the latest trends and highest quality products. 
+          At Easy-Shop, we are dedicated to bringing you the latest trends and highest quality products. 
           We pride ourselves on exceptional customer service and an ever-growing selection of items tailored 
           to fit your style and budget. Enjoy a seamless shopping experience with us, where satisfaction is 
           our top priority.
