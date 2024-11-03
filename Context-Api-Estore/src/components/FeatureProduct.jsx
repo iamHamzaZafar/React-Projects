@@ -15,7 +15,8 @@ const FeatureProduct = () => {
   console.log(featuredProducts) ;
   return (
     <div className="p-8">
-    <h1 className="text-2xl font-bold text-center mb-8">Featured Products</h1>
+    <h1 className="text-2xl   font-mono text-gray-700 font-bold leading-tight text-center mb-8">Featured Products</h1>
+    <hr  className="w-[80%] m-auto mt-5 mb-6" />
     <Card products={featuredProducts} />
   </div>
   )
