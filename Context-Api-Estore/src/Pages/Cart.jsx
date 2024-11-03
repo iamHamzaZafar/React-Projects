@@ -101,7 +101,9 @@ const Cart = () => {
             className="w-full mt-6 bg-blue-600 text-white py-3 rounded-lg text-lg font-semibold"
             disabled={cart.length === 0}
           >
-            {cart.length > 0 ? "Checkout" : "PLEASE LOGIN"}
+            {/* 
+             */}
+             Checkout
           </button>
         </div>
       )}
